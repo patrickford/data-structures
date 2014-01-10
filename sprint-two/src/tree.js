@@ -19,21 +19,21 @@ treeMethods.addChild = function(value){
 };
 
 treeMethods.contains = function(target){
-	var results = false;
+	var result = false;
 
   var searchTree = function(node) {
     if (node.value === target) {
-      results = true;
+      result = true;
     };
     if (node.children !== undefined) {
       for (var i = 0; i < node.children.length; i++) {
-        results = searchTree(node.children[i]);
+        result = searchTree(node.children[i]);
       }
     }
-    return results;
+    return result;
   };
 
   searchTree(this);
-	return results;
+	return result;
 };
 
